@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders
   resources :lineitems
   resources :carts
   root 'shopper#index', as: 'root' #把主页指向shopper/index

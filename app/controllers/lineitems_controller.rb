@@ -1,7 +1,6 @@
 class LineitemsController < ApplicationController
   include CurrentCart
   before_action :set_cart
-
   before_action :set_lineitem, only: [:show, :edit, :update, :destroy]
 
   # GET /lineitems
@@ -33,8 +32,11 @@ class LineitemsController < ApplicationController
     #@line_item = LineItem.new(line_item_params)
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart,
+        # redirect_to @line_item.cart
+        # shopper_url
+        format.html { redirect_to shopper_url,
         notice: 'Line item was successfully created.' }
+        format.js
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }

@@ -7,12 +7,14 @@
   <div class="entry">
     <%= image_tag(product.image) %>
     <h3><%= product.name%></h3>
+    <br>
     <%= sanitize(product.description)%>
+    <br><br>
     <div class="price_line">
       <span class="price">
         <%= number_to_currency(product.price) %>
       </span>
-
+      <%= button_to 'Add to Cart', lineitems_path(product_id: product), class: 'add_to_cart' %>
     </div>
   </div>
 <% end %>

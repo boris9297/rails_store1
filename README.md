@@ -35,3 +35,22 @@ Product.create(name: "Python Cookbook", description: "cook python? what?", image
    app > assets > stylesheets > shopper.SCSS
 
 14 app > views > layout> application.html.erb
+
+part3 Ajax
+
+jQuery:
+('#cart').html("<%= escape_javascript render(@cart)%>")
+
+rails g scaffold Order name address:text email paytype
+
+rails g migration AddOrderToLineitems order:references
+
+rails db:migrate
+
+rails g scaffold User name password:digest
+
+rails db:migrate
+
+rails g controller admin index
+
+rails g controller access new create destroy

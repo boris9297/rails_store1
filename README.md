@@ -1,3 +1,7 @@
+Bowei Liang
+Ruby on Rails Application 2018 fall
+Dec 5, 2018
+
 
 1rails new store1
 2rails g scaffold Product name description:text image:string price:decimal

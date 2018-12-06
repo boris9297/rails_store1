@@ -5,18 +5,11 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<%= form_tag("/search", method: "get") do %>
+<%= form_tag do %>
 
-  <%# <%= label_tag("Search for:") %> %>
-  <%# <%= text_field_tag :q, params[:q] %> %>
-
-  <%= text_field_tag :q, params[:q], {value:"#{@input}", class:"search-input"} %>
-  <%= button_to "Search", class:"search-btn"%>
-  <%# <%= submit_tag 'Search'%> %>
-  search_input
-  <%= @search_input %>
-  input
-  <%= @input %>
+  <%= label_tag("Search for:") %>
+  <%= text_field_tag :q, params[:q]%>
+  <%= submit_tag 'Search'%>
 <% end %>
 
 <%= render 'shopper/form', product: @products%>

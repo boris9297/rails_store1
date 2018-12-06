@@ -16,19 +16,10 @@ class SearchController < ApplicationController
   def create
     @input = params[:q]
     input = @input.strip.downcase
-    if /[^\d\.]/ =~ key
-      @products = Product.where('description like ? or name like ?',
-      %{%#{input}%},
-      %{%#{input}%}
-      )
-    else
-      @products = Product.where('description like ? or name like ? or price = ?',
-      %{%#{input}%},
-      %{%#{input}%},
-      input)
-    end
-    # else
-    #   @products = Product.order(:name)
+    @products = Product.where('description like ? or name like ? or price = ?',
+    %{%#{input}%},
+    %{%#{input}%},
+    input)
     render :new
   end
 end

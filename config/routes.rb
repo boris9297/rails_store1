@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'search', to: "search#new"
+  post 'search', to: "search#create"
+
   # get 'access/new'
   # get 'access/create'
   # get 'access/destroy'

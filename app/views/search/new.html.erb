@@ -7,9 +7,15 @@
 
 <%= form_tag("/search", method: "get") do %>
 
-  <%= label_tag("Search for:") %>
-  <%= text_field_tag :q, params[:q] %>
-  <%= submit_tag 'Search'%>
+  <%# <%= label_tag("Search for:") %> %>
+  <%# <%= text_field_tag :q, params[:q] %> %>
+
+  <%= text_field_tag :q, params[:q], {value:"#{@input}", class:"search-input"} %>
+  <%= button_to "Search", class:"search-btn"%>
+  <%# <%= submit_tag 'Search'%> %>
+  search_input
+  <%= @search_input %>
+  input
   <%= @input %>
 <% end %>
 
